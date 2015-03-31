@@ -36,6 +36,8 @@ INSTALLED_APPS = (
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'django.contrib.admindocs',
+    'django.contrib.humanize',
     'sportsApp',
 )
 
@@ -83,6 +85,11 @@ USE_TZ = True
 
 TEMPLATE_DIRS = (
 	os.path.join(PROJECT_DIR, 'templates'),
+)
+
+TEMPLATE_LOADERS = (
+	'django.template.loaders.filesystem.Loader',
+	'django.template.loaders.app_directories.Loader',
 )
 
 # Static files (CSS, JavaScript, Images)

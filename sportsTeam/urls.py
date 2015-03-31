@@ -6,6 +6,6 @@ urlpatterns = patterns('',
     # url(r'^$', 'sportsTeam.views.home', name='home'),
     # url(r'^blog/', include('blog.urls')),
 
-    url(r'^hello-world/$', 'sportsApp.views.home'),
+    url(r'^', include("sportsApp.urls")),
     url(r'^admin/', include(admin.site.urls)),
 )
