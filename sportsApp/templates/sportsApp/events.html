@@ -2,6 +2,26 @@
 
 {% block content %}
 
-<h2>THIS IS THE Events PAGE HEY</h2>
+<div id="EventsHome" class="col-md-6">
+      <h2>Men's Events</h2>
+      {%for event in events%}
+      <div class="upcomingEvent">
+        <h4>CT #{{ event.number}} | {{ event.name }}</h4>
+        <p>{{ event.startdate }} to {{ event.enddate}} | {{ event.location }} </p>
+        <p><b>Defending Champion:</b> {{ event.defendingchampionMen }}</p>
+      </div>
+      {% endfor %}
+</div>
+
+<div id="EventsHome" class="col-md-6">
+      <h2>Women's Events</h2>
+      {%for event in events%}
+      <div class="upcomingEvent">
+        <h4>CT #{{ event.number}} | {{ event.name }}</h4>
+        <p>{{ event.startdate }} to {{ event.enddate}} | {{ event.location }} </p>
+        <p><b>Defending Champion:</b> {{ event.defendingchampionMen }}</p>
+      </div>
+      {% endfor %}
+</div>
 
 {% endblock %}
