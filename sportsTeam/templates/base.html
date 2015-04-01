@@ -1,20 +1,20 @@
+{% load static from staticfiles %}
 <!DOCTYPE html>
+	
 <html lang="en">
   <head>
-    <meta charset="utf-8">
     <title>World Surf League Championship Tour</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="">
-    <meta name="author" content="Avery Thomas">
-
+    
     <!-- Style Sheets-->
-    <link href="css/bootstrap.css" rel="stylesheet">
-    <link href="css/styles.css" rel="stylesheet">
+    <link href="{% static 'css/bootstrap.min.css' %}" rel="stylesheet">
+    <link href="{% static 'css/styles.css' %}" rel="stylesheet">
   
     <!-- Java Script-->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js"></script>
- 
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js"></script>
+    <script src="{% static 'js/bootstrap.min.js' %}"></script>
+	
   </head>
+  <body>
     <nav class="navbar navbar-default navbar-static-top">
       <div class="container">
         <div class="navbar-header">
@@ -24,7 +24,7 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-          <a class="navbar-brand" href="#"><img src="css/images/logo.png" style="height: 100%"></a>
+          <a class="navbar-brand" href="#"><img src="{% static 'css/images/logo.png' %}" style="height: 100%"></a>
         </div>
         <div id="navbar" class="navbar-collapse collapse">
           <ul class="nav navbar-nav navbar-right">
@@ -39,8 +39,10 @@
 
   <div class="container">
     <div class="col-md-12">
-      <img src="css/images/logo_large.png" style="width: 100%; padding-top:50px; padding-bottom: 50px;">
+      <img src="{% static 'css/images/logo_large.png' %}" style="width: 100%; padding-top:50px; padding-bottom: 50px;">
     </div>
+    
+     {% block content %}{% endblock %} 
     
   </div>
 

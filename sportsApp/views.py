@@ -20,7 +20,7 @@ def ranking(request):
 	athlete_list = Athlete.objects.all()
 	return render(request, 'sportsApp/rankings.html', {'athletes': athlete_list})
 
-def athlete(request):
+def athlete(request, pk):
 	athlete = get_object_or_404(Athlete, id=pk)
-	return render(request, 'sportsApp/athlete.htm', {'athlete': athlete})
+	return render(request, 'sportsApp/athlete.html', {'athlete': athlete})
 	
