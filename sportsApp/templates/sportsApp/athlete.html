@@ -1,105 +1,72 @@
 {% extends "base.html" %}
+{% load humanize %}
 
 {% block content %}
 
-<div class="col-md-9" id="profile">
+<div class="col-md-12" class="profile">
         <div class="row">
         <div class="col-xs-4">
-            <img src="css/images/avatar.png" style="width: 100%;">
+            <img src="" style="width: 100%;">
         </div>
         <div class="col-xs-8">
-            <h2> {{ athlete.name }} | {{ athlete.name }}</h2>
-            <p>Hometown: {{ athlete.name }}</p>
-            <p>DOB: {{ athlete.name }}</p>
+            <h2> {{ athlete.name }} | {{ athlete.jerseyNumber }}</h2>
+            <p>Hometown: {{ athlete.hometown }}</p>
+            <p>Birthday: {{ athlete.dob }}</p>
         </div>
         </div>
         <div class="row">
         <div class="col-md-3 col-xs-5 stats">
             <center>
             <h2>Rank:</h2>
-            <h2>{{ athlete.name }}</h2>
+            <h2>{{ athlete.rank }}</h2>
             </center>
         </div>
         <div class="col-md-3 col-xs-5 stats">
             <center>
             <h2>Points:</h2>
-            <h2>{{ athlete.name }}</h2>
+            <h2>{{ athlete.points|intcomma }}</h2>
             </center>
         </div>
          <div class="col-md-3  col-xs-5 stats">
             <center>
             <h2>Earnings:</h2>
-            <h2>${{ athlete.name }}</h2>
+            <h2>${{ athlete.earnings|intcomma }}</h2>
             </center>
         </div>
         <div class="col-md-3 col-xs-5 stats">
             <center>
-            <h2>Heat Wins:</h2>
-            <h2>{{ athlete.name }}</h2>
+            <h2>CT Heat Wins:</h2>
+            <h2>{{ athlete.CTHeatWins }}</h2>
             </center>
         </div>
         <div class="col-md-3 col-xs-5 stats">
             <center>
             <h2>Avg Heat Score:</h2>
-            <h2>{{ athlete.name }}</h2>
+            <h2>{{ athlete.avgHeatScore }}</h2>
             </center>
         </div>
         <div class="col-md-3 col-xs-5 stats">
             <center>
             <h2>Total Earnings:</h2>
-            <h2>{{ athlete.name }}</h2>
+            <h2>{{ athlete.winnings }}</h2>
+            </center>
+        </div>
+         <div class="col-md-3 col-xs-5 stats">
+            <center>
+            <h2>Height:</h2>
+            <h2>{{ athlete.height }}</h2>
+            </center>
+        </div>
+         <div class="col-md-3 col-xs-5 stats">
+            <center>
+            <h2>Weight:</h2>
+            <h2>{{ athlete.weight }} lbs</h2>
             </center>
         </div>
         </div>
-        <!--
-        <div class="row">
-        <div class="col-md-12">
-            <div id="slider">
-                <a href="#" class="control_next">></a>
-                <a href="#" class="control_prev"><</a>
-            <ul>
-                <li>SLIDE 1</li>
-                <li style="background: #aaa;">SLIDE 2</li>
-                <li>SLIDE 3</li>
-                <li style="background: #aaa;">SLIDE 4</li>
-            </ul>  
-            </div>
-        </div>
-        </div>
-        -->
+
     </div>
-    
-    
-    <div id="EventsHome" class="col-sm-3">
-      <h2>Instagram</h2>
-      <div class="upcomingEvent">
-        <h4>Photo</h4>
-        <p>Dates | Location</p>
-      </div>
-      <div class="upcomingEvent">
-        <h4>Photo</h4>
-        <p>Dates | Location</p>
-      </div>
-      <div class="upcomingEvent">
-        <h4>Photo</h4>
-        <p>Dates | Location</p>
-      </div>
-      <div id="twitter">
-      <h2>Twitter</h2>
-      <div class="upcomingEvent">
-        <h4>Tweet</h4>
-        <p>Dates | Location</p>
-      </div>
-      <div class="upcomingEvent">
-        <h4>Tweet</h4>
-        <p>Dates | Location</p>
-      </div>
-      <div class="upcomingEvent">
-        <h4>Tweet</h4>
-        <p>Dates | Location</p>
-      </div>
-      </div>
-    </div>
+
    
 
 {% endblock %}

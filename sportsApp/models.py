@@ -39,9 +39,10 @@ class Athlete(models.Model):
 
 class Event(models.Model):
 	name = models.CharField(unique=False, max_length=50)
+	gender = models.CharField(max_length=1, default="m")
 	startdate = models.DateField(null=True, blank=True);
 	enddate = models.DateField(null=True, blank=True);
-	number = models.CharField(unique=False, max_length=2)
+	number = models.IntegerField(unique=False)
 	championMen = models.ForeignKey("Athlete", blank=True,  null=True, related_name="championevent")
 	defendingchampionMen = models.ForeignKey("Athlete", blank= True, null=True, related_name="defendingchampionevent")
 	location = models.CharField(unique=False, max_length=50)	

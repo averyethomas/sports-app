@@ -4,7 +4,7 @@
 
 <div id="EventsHome" class="col-md-6">
       <h2>Men's Events</h2>
-      {%for event in events%}
+      {%for event in mensevents%}
       <div class="upcomingEvent">
         <h4>CT #{{ event.number}} | {{ event.name }}</h4>
         <p>{{ event.startdate }} to {{ event.enddate}} | {{ event.location }} </p>
@@ -15,7 +15,7 @@
 
 <div id="EventsHome" class="col-md-6">
       <h2>Women's Events</h2>
-      {%for event in events%}
+      {%for event in womensevents%}
       <div class="upcomingEvent">
         <h4>CT #{{ event.number}} | {{ event.name }}</h4>
         <p>{{ event.startdate }} to {{ event.enddate}} | {{ event.location }} </p>

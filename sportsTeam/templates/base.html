@@ -1,4 +1,5 @@
 {% load static from staticfiles %}
+
 <!DOCTYPE html>
 	
 <html lang="en">
@@ -12,6 +13,7 @@
     <!-- Java Script-->
     <script src="//ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js"></script>
     <script src="{% static 'js/bootstrap.min.js' %}"></script>
+    <script src="{% static 'js/instagram.js' %}"></script>
 	
   </head>
   <body>
@@ -28,16 +30,16 @@
         </div>
         <div id="navbar" class="navbar-collapse collapse">
           <ul class="nav navbar-nav navbar-right">
-            <li><a href="home.html">Home</a></li>
-            <li><a href="events.html">Events</a></li>
-            <li><a href="rankings.html">Rankings</a></li>
+            <li><a href="{% url 'home' %}">Home</a></li>
+            <li><a href="{% url 'sportsApp_course_list' %}">Events</a></li>
+            <li><a href="{% url 'sportsApp_athlete_list' %}">Rankings</a></li>
           </ul>
         </div><!--/.nav-collapse -->
       </div>
     </nav>
   
 
-  <div class="container">
+  <div class="container" style="padding-bottom: 30px;">
     <div class="col-md-12">
       <img src="{% static 'css/images/logo_large.png' %}" style="width: 100%; padding-top:50px; padding-bottom: 50px;">
     </div>

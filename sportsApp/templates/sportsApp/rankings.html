@@ -4,32 +4,39 @@
 
 <div id="EventsHome" class="col-md-6">
       <h2>Men's Rankings</h2>
+      {%for athlete in menslist%}
+      <a href="{% url 'sportsApp_athlete' athlete.id %}">
       <div class="upcomingEvent row">
         <div class="col-xs-4">
             <img src="css/images/avatar.png" style="width: 100%">
         </div>
         <div class="col-xs-8">
-        <h4>Athlete Name | ##</h4>
-        <p>Rank: </p>
-        <p>Points:</p>
-        <p>Earnings:</p>
+        <h4>{{ athlete.name }} | {{ athlete.jerseyNumber }}</h4>
+        <p>Rank: {{ athlete.rank }}</p>
+        <p>Points: {{ athlete.points }}</p>
+        <p>Earnings: ${{ athlete.earnings }}</p>
         </div>
       </div>
-    </div>
-    <div id="EventsHome" class="col-md-6">
+      </a>
+      {% endfor %}
+</div>
+<div id="EventsHome" class="col-md-6">
       <h2>Women's Rankings</h2>
+      {%for athlete in womenslist%}
+      <a href="{% url 'sportsApp_athlete' athlete.id %}">
       <div class="upcomingEvent row">
         <div class="col-xs-4">
             <img src="css/images/avatar.png" style="width: 100%">
         </div>
         <div class="col-xs-8">
-        <h4>Athlete Name | ##</h4>
-        <p>Rank: </p>
-        <p>Points:</p>
-        <p>Earnings:</p>
+        <h4>{{ athlete.name }} | {{ athlete.jerseyNumber }}</h4>
+        <p>Rank: {{ athlete.rank }}</p>
+        <p>Points: {{ athlete.points }}</p>
+        <p>Earnings: ${{ athlete.earnings }}</p>
         </div>
       </div>
-    </div>
-  </div>
+      </a>
+      {% endfor %}
+</div>
 
 {% endblock %}
